@@ -1,0 +1,34 @@
+{
+  "name": "v-webp",
+  "version": "0.0.1",
+  "repository": "https://github.com/L-Chris/v-webp",
+  "author": "L-Chris <563303226@qq.com>",
+  "license": "MIT",
+  "main": "dist/v-webp.js",
+  "module": "dist/v-webp.es.js",
+  "jsnext:main": "dist/v-webp.es.js",
+  "umd:main": "dist/v-webp.umd.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --config ./examples/with-webpack/webpack.dev.conf.js",
+    "build": "rimraf dist && microbundle --external all",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "microbundle": "^0.4.4",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "url-loader": "^1.0.1",
+    "vue-loader": "14.2.1",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
