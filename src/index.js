@@ -1,4 +1,8 @@
-const transfer = _ => _.replace(/\..+/, '.webp')
+const transfer = _ => _.replace(/([^.]+)\..+/, '$1.webp')
+
+const isArray = obj => {
+  return toString.call(obj) === '[object Array]'
+}
 
 const canUseWebp = (() => {
   let element = document.createElement('canvas')
@@ -12,10 +16,10 @@ export default {
   bind (el, {arg, value, modifiers: { bg }}, vnode) {
     const attr = arg || 'src'
     let to = ''
-    if (!value || (typeof value !== 'string' && !Array.isArray(value))) return
-    if (Array.isArray(value) && !value.every(_ => typeof _ === 'string')) return
+    if (!value || (typeof value !== 'string' && !isArray(value))) return
+    if (isArray(value) && !value.every(_ => typeof _ === 'string')) return
 
-    if (Array.isArray(value)) {
+    if (isArray(value)) {
       to = canUseWebp ? value[1] : value[0]
     } else {
       to =  canUseWebp ? transfer(value) : value
@@ -31,13 +35,6 @@ export default {
       el.setAttribute(attr, to)
       return
     }
-    // Todo component
-
-    // if (value.indexOf('data:image') < 0) {
-    //   const url = value.substring(0, value.lastIndexOf('.')) + '.jpg'
-    //   el.setAttribute(attr, canUseWebp ? url : value)
-    // } else {
-    //   el.setAttribute(attr, value)
-    // }
+    // component
   }
 }
