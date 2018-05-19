@@ -14,6 +14,7 @@ const canUseWebp = (() => {
 
 export default {
   bind (el, {arg, value, modifiers: { bg }}, vnode) {
+    
     const attr = arg || 'src'
     let to = ''
     if (!value || (typeof value !== 'string' && !isArray(value))) return
@@ -35,6 +36,5 @@ export default {
       el.setAttribute(attr, to)
       return
     }
-    // component
   }
 }
