@@ -4,8 +4,8 @@
 
 ## ✨ Features:
 
-- background-image
-- img
+- use webp when supported
+- support background-image and img
 
 ## 🔧 Installation
 
@@ -23,9 +23,16 @@ yarn add v-webp-next
 ## 📦 Usage
 
 ```js
+import VWebp from 'v-webp-next'
+
+Vue.use(VWebp)
+
 // nromal use with img
 <img v-webp="./static/img/test.jpg"/>
 <img v-webp="require('./assets/test.jpg')"/>
-// use image in background-image
+<img v-webp="[require('./assets/test.jpg'), require('./assets/test.webp')]"/>
+
+// add modifier .bg when use image in background-image property
 <div v-webp.bg="[require('./assets/test.jpg'), require('./assets/test.webp')]"></div>
+<div v-webp.bg="./static/img/test.jpg"></div>
 ```

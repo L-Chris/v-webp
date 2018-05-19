@@ -1,6 +1,6 @@
 {
   "name": "v-webp-next",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/L-Chris/v-webp",
   "author": "L-Chris <563303226@qq.com>",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "jsnext:main": "dist/v-webp-next.es.js",
   "umd:main": "dist/v-webp-next.umd.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --config ./examples/with-webpack/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --open --config ./example/webpack.dev.conf.js",
     "build": "rimraf dist && microbundle --external all",
     "test": "jest"
   },
