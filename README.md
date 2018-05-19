@@ -23,8 +23,8 @@ yarn add v-webp-next
 ## 📦 Usage
 
 ```js
+// install
 import VWebp from 'v-webp-next'
-
 Vue.use(VWebp)
 
 // nromal use with img
